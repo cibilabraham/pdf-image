@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PDF to Image Converter</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			line-height: 1.5;
+			background-color: #f8f9fa;
+		}
+
+		/* Sticky Menu Styles */
+		.sticky {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 100;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 80px auto 20px;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Menu Styles */
+		.menu {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #f8f9fa;
+			z-index: 100;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.menu a {
+			text-decoration: none;
+			color: #333;
+			padding: 15px;
+			margin: 0 10px;
+			border-radius: 4px;
+			transition: background-color 0.3s;
+		}
+
+		.menu a:hover {
+			background-color: #e9ecef;
+		}
+
+		/* Section Styles */
+		section {
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+
+		section h2 {
+			font-size: 24px;
+			margin-bottom: 15px;
+		}
+
+		/* Other Styles (same as before) */
+		p {
+			margin-bottom: 10px;
+		}
+
+		hr {
+			border: none;
+			border-top: 1px solid #dee2e6;
+			margin: 20px 0;
+		}
+
+		ol {
+			padding-left: 20px;
+		}
+
+		dl {
+			margin-bottom: 20px;
+		}
+
+		dt {
+			font-weight: bold;
+		}
+
+		pre {
+			background-color: #f8f9fa;
+			padding: 10px;
+			border-radius: 4px;
+			font-size: 14px;
+			overflow-x: auto;
+		}
+	</style>
+	<script>
+		window.addEventListener('scroll', function () {
+			var menu = document.querySelector('.menu');
+			menu.classList.toggle('sticky', window.scrollY > 0);
+		});
+
+		function smoothScroll(target) {
+			document.querySelector(target).scrollIntoView({
+				behavior: 'smooth'
+			});
+		}
+	</script>
+</head>
+
+<body>
+	<div class="menu">
+		<a href="javascript:void(0)" onclick="smoothScroll('#installation')">Installation</a>
+		<a href="javascript:void(0)" onclick="smoothScroll('#usage')">Usage</a>
+		<a href="javascript:void(0)" onclick="smoothScroll('#settings')">Settings</a>
+		<a href="javascript:void(0)" onclick="smoothScroll('#flipbook')">Real3D Flipbook</a>
+	</div>
+
+	<div class="container">
+		<h1>Thank you for purchasing my item.</h1>
+		<p>If you have any questions that are beyond the scope of this help file, please feel free to email via my
+			user
+			page
+			contact form. Thanks so much!</p>
+		<p>Please rate the file on your downloads page if you like it!</p>
+
+		<h2 id="installation">Installation</h2>
+		<hr>
+		<p>Copy the content of the deploy folder to your server or local server, for example, to the folder
+			"pdftoimg".
+		</p>
+
+		<h2 id="usage">Usage</h2>
+		<hr>
+		<ol>
+			<li>Open the URL of your application in the browser. For example, if your domain is example.com and you
+				copied it to
+				the folder pdftoimg, open example.com/pdftoimg</li>
+			<li>Adjust the settings for the conversion if needed.</li>
+			<li>Upload the PDF. The conversion will automatically start.</li>
+			<li>Once the conversion is completed, download the zip file by clicking the Download button.</li>
+		</ol>
+
+		<h2 id="settings">Settings</h2>
+		<hr>
+		<dl>
+			<dt>Image height</dt>
+			<dd>The height of the generated image in pixels, recommended between 1000 and 3000.</dd>
+
+			<dt>Thumbnail height</dt>
+			<dd>The height of the generated thumbnail image in pixels, recommended between 100 and 300.</dd>
+
+			<dt>Image quality</dt>
+			<dd>Between 0 and 1. Recommended 0.8. A higher value does not give noticeable quality improvements but
+				increases
+				the image size.</dd>
+
+			<dt>Image type</dt>
+			<dd>Choose between JPEG and WebP. Recommended is WebP, which is smaller in size at the same quality and
+				is
+				supported
+				in all modern browsers.</dd>
+		</dl>
+
+		<h2 id="flipbook">Real3D Flipbook</h2>
+		<hr>
+		<p>Real3D Flipbook jQuery Plugin is used to create realistic 3D flipbooks from PDF or images inside your
+			website.</p>
+		<p>It is sold separately <a href="https://codecanyon.net/item/real3d-flipbook-jquery-plugin/4281720">here</a>.
+		</p>
+		<p>With PDF to Image Converter, you can create a set of images and JSON from a PDF that can be used to
+			create a
+			flipbook with working PDF links, text selection, and text search.</p>
+		<p>For example, you can convert the PDF file <em>book1.pdf</em> and get a folder <em>book1</em> with an
+			image,
+			thumbnail image, and JSON for each PDF page.</p>
+		<p>You can use those files to create a flipbook by passing an array of pages that have <code>src</code>,
+			<code>thumb</code>,
+			and <code>json</code>, like this:
+		</p>
+		<pre><code>jQuery("#container").flipBook({
+  pages: [
+    { src: "book1/1.webp", thumb: "book1/thumb1.webp", json: "book1/1.json" },
+    { src: "book1/2.webp", thumb: "book1/thumb2.webp", json: "book1/2.json" },
+    ...
+  ]
+});</code></pre>
+	</div>
+</body>
+
+</html>

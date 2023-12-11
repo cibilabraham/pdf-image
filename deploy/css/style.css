@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#uploadContainer {
+    text-align: center;
+}
+
+#dropContainer {
+    border: 2px dashed #aaa;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#dropContainer.drag-over {
+    border-color: #555;
+}
+
+#dropMessage {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#browseButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#browseButton:hover {
+    background-color: #45a049;
+}
+
+#progressContainer {
+    background-color: #eee;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progressBar {
+    background-color: #4CAF50;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+#progressBar.complete {
+    background-color: #45a049;
+}
+
+#progressMessage {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#downloadContainer {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#downloadButton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#downloadButton:hover {
+    background-color: #45a049;
+}
+
+#pdfFile {
+    display: none;
+}
+
+#dropContainer {
+    position: relative;
+}
+
+.info-message {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+#thumbnailsContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.thumbnail {
+    /* width: 150px; */
+    height: 100px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#settingsContainer {
+    margin-top: 20px;
+}
+
+.setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.setting label {
+    width: 120px;
+    font-weight: bold;
+}
+
+.setting .form-control {
+    margin-left: 10px;
+    width: 80px;
+    padding: 5px;
+}
+
+.setting #imageQualityValue {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.setting .description {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Input field styles */
+#pdfUrlInput {
+	padding: 8px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 300px;
+	margin-right: 10px;
+}
+
+/* Button styles */
+#convertButton {
+	padding: 8px 16px;
+	font-size: 16px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#convertButton:hover {
+	background-color: #45a049;
+}
